@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playlists</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8" />
+    <link href="day.css" id="styles" rel="stylesheet" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+   <!-- import the webpage's stylesheet -->
+   <link rel="stylesheet" href="./day.css" />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+     rel="stylesheet"/>
+</head>
+
+<body>
+  <section id="timeline">
+  <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active" style="padding:1px"
+        ><img
+        src="https://cdn.glitch.com/851ce55a-7aed-4a2a-9899-2049413586a3%2FUntitled-2.png?v=1592083031601"
+        width="110" height="52">
+      </a>
+      <a href="https://fairycommentgenerator.glitch.me/" target="_blank"
+         >Fairy Generator</a>
+      
+      <a href="./playlist.html">Playlist</a>
+      
+  </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      
+        $(document).ready(function() {
+          $("#mode").click(function() {
+            if ($("link#styles").attr("href") == "day.css") {
+              $("#mode").attr("value", "Back To Normal");
+              $("link#styles").attr("href", "night.css");
+            } else {
+              $("#mode").attr("value", "Memeify");
+              $("link#styles").attr("href", "day.css");
+            }
+          });
+        });
+    </script>
+
+   
+      <h1><u><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">iconic meme songs</a></u></h1>
+      <p class="leader">
+        find the most fitting, impactful bops to add to your playlist 🥳
+      </p>
+<!--        <div
+        class="table-responsive container"
+        style="font-family:Inter; display:flex;justify-content:center;align-items:center;"
+      >
+        <input
+          type="button"
+          id="mode"
+          text="Switch Mode"
+          class="btn btn-primary"
+          value="Memeify"
+        />
+         
+      </div> -->
+
+      
+  <!-- Quiz Section -->
+    <form id="form1">
+
+      <p style="font-size: 15px; color: black;display:flex;justify-content:center;align-items:center;"><b>1. Favorite Social Media?</b></p>
+      <label for="var_string"><input type="radio" name="variable" value="20" id="var_string"/> TikTok/Twitter</label>
+      <label for="var_join"><input type="radio" name="variable" value="0" id="var_join"/> Snapchat/Facebook</label>
+      <label for="var_info"><input type="radio" name="variable" value="10" id="var_info" /> Other</label>
+
+
+      <p style="font-size: 15px; color: black;display:flex;justify-content:center;align-items:center;"><b>2. Age Range?</b></p>
+      <label for="sub_string"><input type="radio" name="sub" value="20" id="sub_string"/> Gen Z or Beyond</label>
+      <label for="sub_join"><input type="radio" name="sub" value="0" id="sub_join"/> Boomer/Gen X </label>
+      <label for="sub_info"><input type="radio" name="sub" value="10" id="sub_info" /> Millenial</label>
+
+
+      <p style="font-size: 15px; color: black;display:flex;justify-content:center;align-items:center;"><b>3. Favorite Meme?</b></p>
+      <label for="cat_string"><input type="radio" name="con" value="20" id="cat_string" /> Wendy's Tweets/I'm Already Tracer</label>
+      <label for="cat_join"><input type="radio" name="con" value="0" id="cat_join" /> Political/LOLcats/Minion Memes</label>
+      <label for="cat_info"><input type="radio" name="con" value="10" id="cat_info" /> Road Work Ahead"/Other Vines</label>
+
+
+      <p style ="font-size: 15px; color: black;display:flex;justify-content:center;align-items:center;"><b>4. Time spent online everyday?</b></p>
+      <label for="if_string"><input type="radio" name="ifstate" value="20" id="if_string" /> More than 5 hours</label>
+      <label for="if_join"><input type="radio" name="ifstate" value="0" id="if_join" /> Less than 1 hour</label>
+      <label for="if_info"><input type="radio" name="ifstate" value="10" id="if_info" /> 1-4 Hours</label>
+
+
+      <p style ="font-size: 15px; color: black;display:flex;justify-content:center;align-items:center;"><b>5. Do you consider yourself as a meme expert?</b></p>
+      <label for="tim_string"><input type="radio" name="time" value="20" id="tim_string" /> Yes</label>
+      <label for="tim_join"><input type="radio" name="time" value="0" id="tim_join" /> No</label>
+      <label for="tim_info"><input type="radio" name="time" value="10" id="tim_info" /> Somewhat</label>
+
+<br>
+<div style="display:flex;justify-content:center;align-items:center;">
+  
+      
+<button id= "mode" type="submit" value="Submit" > Submit </button>
+  </div>
+</form>
+
+<br>
+
+
+<p style ="font-size: 15px; color: black;display:flex;justify-content:center;align-items:center;"> Results: <span id="grade"></span></p>
+<p id="grade2"></p>
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+       variable = parseInt(document.querySelector('input[name = "variable"]:checked').value);
+     sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+     con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+     ifstate = parseInt(document.querySelector('input[name = "ifstate"]:checked').value);
+     time = parseInt(document.querySelector('input[name = "time"]:checked').value);
+     
+     
+     result = variable + sub + con + ifstate + time;
+     result = variable + sub + con + ifstate;
+     
+if (result == 100) {result2 = "Your style is new memes! Click the 3rd playlist below!"};
+if (result >= 50) {result2 =  "Ooooh, you'd like the somewhat new memes! Click the 2nd playlist below!"};
+if (result < 50) {result2 = "Nice! You'd be into the old, but golden memes! Click the 1st playlist below!"};
+
+document.getElementById("grade2").innerHTML = result2; 
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+</script>
+
+<div class="table-responsive container">
+ 
+</div>
+<div style="font-size: 15px; color: black;display:flex;justify-content:center;align-items:center;" >
+<div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Playlist 1</div>
+        <a href="spotify:playlist:54LLv4GZ0FLU6q2hbZwRdV" target="_blank"><img src="https://i.ibb.co/M2yF7fs/Screen-Shot-2020-06-14-at-12-50-55-AM.png" alt="House" style="width:100%"></a>
+      </div>
+</div>
+<div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Playlist 2</div>
+        <a href="spotify:playlist:54wQoxVx664t7dvWS8iNqG" target="_blank"><img src="https://i.ibb.co/GnYsDWD/Screen-Shot-2020-06-14-at-12-49-53-AM.png" alt="House" style="width:100%"></a>
+      </div>
+</div>
+<div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Playlist 3</div>
+        <a href="spotify:playlist:5LqkTrSMEgW1gRMZhHNOkg" target="_blank"><img src="https://i.ibb.co/54rL35V/Screen-Shot-2020-06-14-at-12-47-54-AM.png" alt="House" style="width:100%"></a>
+      </div>
+</div>
+  </div>
+  </section>
+</body>
+  
+  
+    <footer>
+      made with 💖 by anum, bhavana, hana, mackenzie, and trinity
+    </footer>
+  
+  
+</html>
